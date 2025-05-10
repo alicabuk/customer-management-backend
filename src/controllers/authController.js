@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const client = require('../db');
+const client = require('../config/db');
 
 const login = async (req, res) => {
   const { username, password } = req.body;
