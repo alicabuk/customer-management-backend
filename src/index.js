@@ -1,5 +1,6 @@
 const express = require('express');
-const routes = require('./routes/routes');
+const authRoutes = require('./routes/authRoutes');
+const customerRoutes = require('./routes/customerRoutes');
 const checkAndCreateAdmin = require('./config/checkAndCreateAdmin');
 
 require('dotenv').config();
@@ -7,7 +8,9 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 checkAndCreateAdmin();
-app.use('/api', routes);
+
+app.use('/api/auth', authRoutes);
+app.use('/api/customer', customerRoutes);
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
