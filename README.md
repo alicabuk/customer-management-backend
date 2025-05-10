@@ -38,21 +38,14 @@ psql -U postgres -d customer_management_db -f db/init.sql
 Create a .env file in the root of your project and add the following:
 
 ```bash
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=customer_management_db
-DB_USER=your_postgresql_username
-DB_PASSWORD=your_postgresql_password
-JWT_SECRET=your_jwt_secret_key
-JWT_EXPIRES_IN=1h
+DB_HOST=localhost           # The host where your PostgreSQL server is running (usually localhost).
+DB_PORT=5432                # The port for PostgreSQL (usually 5432).
+DB_NAME=customer_management_db  # The name of your database.
+DB_USER=your_postgresql_username   # Your PostgreSQL username.
+DB_PASSWORD=your_postgresql_password  # Your PostgreSQL password.
+JWT_SECRET=your_jwt_secret_key   # A secret string used to sign JWT tokens (choose something secure).
+JWT_EXPIRES_IN=1h          # Token expire time (e.g., 1h for 1 hour, or 3600s for 1 hour).
 ```
-DB_HOST: The host where your PostgreSQL server is running (usually localhost).
-DB_PORT: The port for PostgreSQL (usually 5432).
-DB_NAME: The name of your database.
-DB_USER: Your PostgreSQL username.
-DB_PASSWORD: Your PostgreSQL password.
-JWT_SECRET: A secret string used to sign JWT tokens (choose something secure).
-JWT_EXPIRES_IN: Token expire time.
 
 ### 4. Run the Application
 Once you've set up the database and environment variables, run the application:
