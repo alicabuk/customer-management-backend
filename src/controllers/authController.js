@@ -4,7 +4,12 @@ const jwt = require('jsonwebtoken');
 
 const login = async (req, res) => {
   const { username, password } = req.body;
-
+  if (!username) {
+    return res.status(400).json({ message: "Username required" });
+  }
+  if (!password) {
+    return res.status(400).json({ message: "Password required" });
+  }
   try {
     const result = await client.query(
       "SELECT username, password FROM users WHERE username = $1",
