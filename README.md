@@ -5,7 +5,7 @@ This is a backend for the Customer Management application, built using **Node.js
 ## Project Requirements
 
 - **Node.js** 22.4 (or higher)
-- **PostgreSQL** 12 or later
+- **PostgreSQL** 14 or later
 - **npm** (Node package manager)
 
 ---
